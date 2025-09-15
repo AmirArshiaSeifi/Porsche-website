@@ -1,0 +1,73 @@
+:root {
+
+    --dom-color: #2b2b2b;
+    --sec-color: #5b5b5b;
+    --acnt-color: #cab34b;
+    
+}
+
+body{
+
+    background-color: var(--dom-color);
+    
+}
+
+.scroll-watcher{
+    
+    height: 2px;
+    background-color: var(--acnt-color);
+    transform-origin: left;
+    animation: roll linear;
+    animation-timeline: scroll();
+    position: sticky;
+    top:0;
+    z-index: 100;
+    
+}
+
+@keyframes roll {
+    from {width: 0;}
+    to {width: 100%;}
+    
+}
+
+main{
+    
+    padding: 20%;
+    padding-top: 50px;
+    font-size: 1.2rem;
+    color: white;
+    
+}
+
+main:not(.text-header) {
+    
+    text-align: justify;
+    
+}
+
+img{
+    
+    scale: .8;
+    opacity: 0;
+    width: 100%;
+    border-radius: 20px;
+    animation: start linear forwards;
+    animation-timeline: view();
+    animation-range: entry 100px;
+    
+}
+
+.text-header{
+    
+    font-size: 5rem;
+    font-weight: 800;
+    text-align: center;
+    
+}
+
+@keyframes start {
+
+    to {scale: 1; opacity: 1;}
+    
+}
